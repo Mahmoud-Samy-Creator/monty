@@ -119,12 +119,12 @@ void stack_div(stack_t **stack_top, UNUSED unsigned int line_number)
 		exit(EXIT_FAILURE);
 	}
 
-  if ((*stack_top)->n == 0)
-  {
-    fprintf(stderr, "L%u: division by zero\n", line_number);
-    free_ctx();
-    exit(EXIT_FAILURE);
-  }
+	if ((*stack_top)->n == 0)
+	{
+		fprintf(stderr, "L%u: division by zero\n", line_number);
+		free_ctx();
+		exit(EXIT_FAILURE);
+	}
 
 	(*stack_top)->prev->n /= (*stack_top)->n;
 	*stack_top = (*stack_top)->prev;
