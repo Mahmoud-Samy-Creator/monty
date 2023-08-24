@@ -20,5 +20,7 @@ void stack_rotl(stack_t **stack_top, UNUSED unsigned int line_number)
 		curr = curr->prev;
 
 	curr->n = (*stack_top)->n;
+	curr = *stack_top;
 	*stack_top = (*stack_top)->prev;
+	free(curr);
 }
