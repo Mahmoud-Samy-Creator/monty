@@ -3,7 +3,7 @@
 CTX_t *CTX = NULL;
 
 /**
- * main - start points of the program
+ * main - start point of the program
  * @ac: program argument count
  * @av: program arguments
  *

@@ -62,7 +62,7 @@ void stack_push(stack_t **stack_top, unsigned int line_number)
 /**
  * stack_pall - push new element to stack
  * @stack_top: pointer to head of stack (top node)
- * @line_number: the line number that contains the "push" instruction
+ * @line_number: the line number that contains the "pall" instruction
  * Return: void
  */
 void stack_pall(stack_t **stack_top, UNUSED unsigned int line_number)
@@ -81,7 +81,7 @@ void stack_pall(stack_t **stack_top, UNUSED unsigned int line_number)
 /**
  * stack_sub - substract the the top element with it's previous
  * @stack_top: pointer to head of stack (top node)
- * @line_number: the line number that contains the "push" instruction
+ * @line_number: the line number that contains the "sub" instruction
  * Return: void
  *
  * Description: will sub the top two elements and replace it with
@@ -104,10 +104,10 @@ void stack_sub(stack_t **stack_top, UNUSED unsigned int line_number)
 /**
  * stack_div - divides the the top element with it's previous
  * @stack_top: pointer to head of stack (top node)
- * @line_number: the line number that contains the "push" instruction
+ * @line_number: the line number that contains the "div" instruction
  * Return: void
  *
- * Description: will sub the top two elements and replace it with
+ * Description: will divide the top two elements and replace it with
  * one node contains the result
  */
 void stack_div(stack_t **stack_top, UNUSED unsigned int line_number)
