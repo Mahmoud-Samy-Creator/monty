@@ -34,7 +34,7 @@ void stack_push(stack_t **stack_top, unsigned int line_number)
 	if (atoi(CTX->tokens[1]) == 0 && strcmp(CTX->tokens[1], "0") != 0)
 	{
 		fprintf(stderr, "L%u: usage: push integer\n", line_number);
-    free_ctx();
+		free_ctx();
 		exit(EXIT_FAILURE);
 	}
 
@@ -42,7 +42,7 @@ void stack_push(stack_t **stack_top, unsigned int line_number)
 	if (!node)
 	{
 		fprintf(stderr, "Error: malloc failed\n");
-    free_ctx();
+		free_ctx();
 		exit(EXIT_FAILURE);
 	}
 
