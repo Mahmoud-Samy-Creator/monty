@@ -1,0 +1,6 @@
+                 push                      15  
+
+              
+push 17 push 15 push sdfsdf           
+
+pall
