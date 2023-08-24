@@ -29,18 +29,18 @@ void stack_push(stack_t **stack_top, unsigned int line_number)
 	stack_t *node = NULL;
 
 	if (!stack_top)
-		fprintf(stderr, "stack is NULL");
+		fprintf(stderr, "stack is NULL\n");
 
 	if (atoi(CTX->tokens[1]) == 0 && strcmp(CTX->tokens[1], "0") != 0)
 	{
-		fprintf(stderr, "L%u: usage: push integer", line_number);
+		fprintf(stderr, "L%u: usage: push integer\n", line_number);
 		exit(EXIT_FAILURE);
 	}
 
 	node = malloc(sizeof(stack_t));
 	if (!node)
 	{
-		fprintf(stderr, "Error: malloc failed");
+		fprintf(stderr, "Error: malloc failed\n");
 		exit(EXIT_FAILURE);
 	}
 

@@ -15,7 +15,7 @@ char *readfile(FILE *stream)
 	line = (char *)malloc(ptr_size);
 	if (!line)
 	{
-		fprintf(stderr, "Error: malloc failed");
+		fprintf(stderr, "Error: malloc failed\n");
 		free(line);
 		exit(EXIT_FAILURE);
 	}
@@ -66,7 +66,7 @@ char **parseline(char *line, char *delim)
 	tokens = malloc(sizeof(char *) * dptr_size);
 	if (!tokens)
 	{
-		fprintf(stderr, "Error: malloc failed");
+		fprintf(stderr, "Error: malloc failed\n");
 		free(line);
 		exit(EXIT_FAILURE);
 	}
