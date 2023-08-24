@@ -88,6 +88,7 @@ void stack_div(stack_t **stack_top, UNUSED unsigned int line_number);
 /*          stack_1.c          */
 void stack_pop(stack_t **stack, unsigned int line_number);
 void stack_pint(stack_t **stack, unsigned int line_number);
+void stack_swap(stack_t **stack, unsigned int line_number);
 void stack_mod(stack_t **stack_top, UNUSED unsigned int line_number);
 
 /*          stack_2.c          */

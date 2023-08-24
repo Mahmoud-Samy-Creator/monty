@@ -1,6 +1,28 @@
 #include "monty.h"
 
 /**
+ * stack_swap - A function swaps 2 elements of stack
+ * @stack: ptr ot ptr of the stack elements
+ * @line_number: The line counter
+ * Return: void
+ */
+void stack_swap(stack_t **stack, unsigned int line_number)
+{
+	stack_t *temp = NULL;
+	int item;
+
+	if ((*stack) == NULL || stack == NULL || (*stack)->prev == NULL)
+	{
+		fprintf(stderr, "L%u: can't swap, stack too short", line_number);
+		exit(EXIT_FAILURE);
+	}
+
+	temp = (*stack)->prev;
+	item = temp->n;
+	temp->n = (*stack)->n;
+	(*stack)->n = item;
+}
+/**
  * stack_pop - A function pop last element of stack
  * @stack: ptr ot ptr of the stack elements
  * @line_number: The line counter
