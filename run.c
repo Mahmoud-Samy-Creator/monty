@@ -96,9 +96,8 @@ char **parseline(char *line, char *delim)
 void exec_instructions(stack_t **stack, unsigned int line_number)
 {
 	int i;
-	instruction_t keywords[] = {{"push", stack_push},
-		{"pall", stack_pall},
-		{NULL, NULL}};
+	instruction_t keywords[] = {{"push", stack_push}, {"pall", stack_pall},
+		                          {"sub", stack_sub}, {NULL, NULL}};
 
 	if (!CTX->tokens)
 		return;
