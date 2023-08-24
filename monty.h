@@ -92,6 +92,7 @@ void stack_mod(stack_t **stack_top, UNUSED unsigned int line_number);
 
 /*          stack_2.c          */
 void stack_rotl(stack_t **stack_top, UNUSED unsigned int line_number);
+void stack_pchar(stack_t **stack_top, unsigned int line_number);
 
 
 /*          strdup.c          */
