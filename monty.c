@@ -2,6 +2,13 @@
 
 CTX_t *CTX = NULL;
 
+/**
+ * main - start points of the program
+ * @ac: program argument count
+ * @av: program arguments
+ *
+ * Return: 0 if success
+ */
 int main(int ac, char **av)
 {
 	if (ac != 2)
@@ -21,9 +28,8 @@ int main(int ac, char **av)
 	{
 		CTX->line = readfile(CTX->fd);
 		if (!CTX->line)
-		{
 			break;
-		}
+
 		else if (strcmp(CTX->line, "\n") == 0)
 		{
 			CTX->line_n++;
@@ -32,8 +38,10 @@ int main(int ac, char **av)
 		CTX->tokens = parseline(CTX->line, " \n");
 		if (!CTX->tokens)
 			break;
+
 		if (*CTX->tokens)
 			exec_instructions(&CTX->stack, CTX->line_n);
+
 		free(CTX->line);
 		CTX->line = NULL;
 		free_dptr(CTX->tokens);
