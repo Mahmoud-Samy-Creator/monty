@@ -78,3 +78,25 @@ void stack_pall(stack_t **stack_top, UNUSED unsigned int line_number)
 	}
 }
 
+/**
+ * stack_sub - substract the the top element with it's previous
+ * @stack_top: pointer to head of stack (top node)
+ * @line_number: the line number that contains the "push" instruction
+ * Return: void
+ *
+ * Description: will sub the top two elements and replace it with
+ * one node contains the result
+ */
+void stack_sub(stack_t **stack_top, UNUSED unsigned int line_number)
+{
+  if (!stack_top || !*stack_top || !(*stack_top)->prev)
+  {
+    fprintf(stderr, "L%u: can't sub, stack too short\n", line_number);
+    free_ctx();
+    exit(EXIT_FAILURE);
+  }
+
+  (*stack_top)->prev->n -= (*stack_top)->n;
+  *stack_top = (*stack_top)->prev;
+  free((*stack_top)->next);
+}
