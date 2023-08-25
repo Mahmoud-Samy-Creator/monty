@@ -15,7 +15,7 @@ void stack_add(UNUSED stack_t **stack, UNUSED unsigned int line_number)
 	if ((*stack) == NULL || stack == NULL || (*stack)->prev == NULL)
 	{
 		fprintf(stderr, "L%u: can't add, stack too short\n", line_number);
-		free(CTX);
+		free_ctx();
 		exit(EXIT_FAILURE);
 	}
 	sum = (*stack)->n + ((*stack)->prev)->n;
