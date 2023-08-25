@@ -43,6 +43,308 @@ Replace file with the path to the Monty ByteCodes file.
 ### Implemented_Functions
 This project involves implementing the following opcode functions:
 
+0. push, pall
+1. pint
+2. pop
+3. swap
+4. add
+5. nop
+6. sub
+7. div
+8. mul
+9. mod
+10. comments
+11. pchar
+12. pstr
+13. rotl
+14. rotr
+15. stack, queue
+16. Brainf*ck
+17. Add two digits
+18. Multiplication
+19. Multiplication level up
+
+### Examples
+0. push, pall
+-------------------------------------------------------
+
+julien@ubuntu:~/monty$ cat -e bytecodes/00.m
+push 1$
+push 2$
+push 3$
+pall$
+julien@ubuntu:~/monty$ ./monty bytecodes/00.m
+3
+2
+1
+julien@ubuntu:~/monty$
+
+-------------------------------------------------------
+
+1. pint
+-------------------------------------------------------
+
+julien@ubuntu:~/monty$ cat bytecodes/06.m 
+push 1
+pint
+push 2
+pint
+push 3
+pint
+julien@ubuntu:~/monty$ ./monty bytecodes/06.m 
+1
+2
+3
+julien@ubuntu:~/monty$
+
+-------------------------------------------------------
+
+2. pop
+-------------------------------------------------------
+
+julien@ubuntu:~/monty$ cat bytecodes/07.m 
+push 1
+push 2
+push 3
+pall
+pop
+pall
+pop
+pall
+pop
+pall
+julien@ubuntu:~/monty$ ./monty bytecodes/07.m 
+3
+2
+1
+2
+1
+1
+julien@ubuntu:~/monty$ 
+
+-------------------------------------------------------
+
+3. swap
+-------------------------------------------------------
+
+julien@ubuntu:~/monty$ cat bytecodes/09.m 
+push 1
+push 2
+push 3
+pall
+swap
+pall
+julien@ubuntu:~/monty$ ./monty bytecodes/09.m 
+3
+2
+1
+2
+3
+1
+julien@ubuntu:~/monty$ 
+
+-------------------------------------------------------
+
+4. add
+-------------------------------------------------------
+
+julien@ubuntu:~/monty$ cat bytecodes/12.m 
+push 1
+push 2
+push 3
+pall
+add
+pall
+
+julien@ubuntu:~/monty$ ./monty bytecodes/12.m 
+3
+2
+1
+5
+1
+julien@ubuntu:~/monty$
+
+-------------------------------------------------------
+
+6. sub
+-------------------------------------------------------
+
+julien@ubuntu:~/monty$ cat bytecodes/19.m 
+push 1
+push 2
+push 10
+push 3
+sub
+pall
+julien@ubuntu:~/monty$ ./monty bytecodes/19.m 
+7
+2
+1
+julien@ubuntu:~/monty$
+
+-------------------------------------------------------
+7. div
+-------------------------------------------------------
+
+-------------------------------------------------------
+8. mul
+-------------------------------------------------------
+
+-------------------------------------------------------
+9. mod
+-------------------------------------------------------
+
+-------------------------------------------------------
+10. comments
+-------------------------------------------------------
+
+-------------------------------------------------------
+11. pchar
+-------------------------------------------------------
+
+julien@ubuntu:~/monty$ cat bytecodes/28.m 
+push 72
+pchar
+julien@ubuntu:~/monty$ ./monty bytecodes/28.m 
+H
+julien@ubuntu:~/monty$
+
+-------------------------------------------------------
+12. pstr
+-------------------------------------------------------
+
+julien@ubuntu:~/monty$ cat bytecodes/31.m 
+push 1
+push 2
+push 3
+push 4
+push 0
+push 110
+push 0
+push 108
+push 111
+push 111
+push 104
+push 99
+push 83
+pstr
+julien@ubuntu:~/monty$ ./monty bytecodes/31.m 
+School
+julien@ubuntu:~/monty$ 
+
+-------------------------------------------------------
+13. rotl
+-------------------------------------------------------
+
+julien@ubuntu:~/monty$ cat bytecodes/35.m 
+push 1
+push 2
+push 3
+push 4
+push 5
+push 6
+push 7
+push 8
+push 9
+push 0
+pall
+rotl
+pall
+julien@ubuntu:~/monty$ ./monty bytecodes/35.m 
+0
+9
+8
+7
+6
+5
+4
+3
+2
+1
+9
+8
+7
+6
+5
+4
+3
+2
+1
+0
+julien@ubuntu:~/monty$ 
+
+-------------------------------------------------------
+
+15. stack, queue
+-------------------------------------------------------
+
+julien@ubuntu:~/monty$ cat bytecodes/47.m
+queue
+push 1
+push 2
+push 3
+pall
+stack
+push 4
+push 5
+push 6
+pall
+add
+pall
+queue
+push 11111
+add
+pall
+julien@ubuntu:~/monty$ ./monty bytecodes/47.m
+1
+2
+3
+6
+5
+4
+1
+2
+3
+11
+4
+1
+2
+3
+15
+1
+2
+3
+11111
+julien@ubuntu:~/monty$ 
+
+-------------------------------------------------------
+
+17. Add two digits
+-------------------------------------------------------
+
+julien@ubuntu:~/monty/bf$ bf ./1001-add.bf
+81
+9julien@ubuntu:~/monty/bf$
+
+-------------------------------------------------------
+18. Multiplication
+-------------------------------------------------------
+
+julien@ubuntu:~/monty/bf$ bf 1002-mul.bf
+24
+8julien@ubuntu:~/monty/bf$
+
+-------------------------------------------------------
+19. Multiplication level up
+-------------------------------------------------------
+
+julien@ubuntu:~/monty/bf$ bf 1003-mul.bf 
+77
+49
+julien@ubuntu:~/monty/bf$ 
+
+-------------------------------------------------------
+
 ### Notes
 Invalid opcode instructions will be reported with an error message.
 The program handles division by zero scenarios.
