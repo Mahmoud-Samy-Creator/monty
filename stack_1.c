@@ -6,9 +6,9 @@
  * @line_number: The line counter
  * Return: void
  */
-void stack_nop(UNUSED stack_t **stack, UNUSED unsigned line_number)
+void stack_nop(UNUSED stack_t **stack, UNUSED unsigned int line_number)
 {
-	return;
+
 }
 
 /**
