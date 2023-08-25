@@ -6,6 +6,7 @@
 #include <stdlib.h>
 #include <unistd.h>
 #include <string.h>
+#include <ctype.h>
 
 #define UNUSED __attribute__((unused))
 
@@ -100,6 +101,10 @@ void stack_mul(stack_t **stack_top, unsigned int line_number);
 
 /*          strdup.c          */
 char *_strdup(char *str);
+
+
+/*         isnum.c             */
+int isnum(char *str);
 
 #endif
 

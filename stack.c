@@ -31,7 +31,7 @@ void stack_push(stack_t **stack_top, unsigned int line_number)
 	if (!stack_top)
 		fprintf(stderr, "stack is NULL\n");
 
-	if (atoi(CTX->tokens[1]) == 0 && strcmp(CTX->tokens[1], "0") != 0)
+	if (CTX->tokens[1] == NULL || isnum(CTX->tokens[1]) == 0)
 	{
 		fprintf(stderr, "L%u: usage: push integer\n", line_number);
 		free_ctx();

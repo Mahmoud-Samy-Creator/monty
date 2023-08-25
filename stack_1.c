@@ -43,9 +43,9 @@ void stack_pop(stack_t **stack, unsigned int line_number)
 {
 	stack_t *curr = (*stack);
 
-	if ((*stack) == NULL || stack == NULL)
+	if (stack == NULL || (*stack) == NULL)
 	{
-		fprintf(stderr, "L%u: can't pint, stack empty\n", line_number);
+		fprintf(stderr, "L%u: can't pop an stack empty\n", line_number);
 		free_ctx();
 		exit(EXIT_FAILURE);
 	}
