@@ -1,6 +1,17 @@
 #include "monty.h"
 
 /**
+ * stack_nop - A function doesn't do anything
+ * @stack: ptr to ptr of the stack elements
+ * @line_number: The line counter
+ * Return: void
+ */
+void stack_nop(UNUSED stack_t **stack, UNUSED unsigned line_number)
+{
+	return;
+}
+
+/**
  * stack_swap - A function swaps 2 elements of stack
  * @stack: ptr ot ptr of the stack elements
  * @line_number: The line counter
