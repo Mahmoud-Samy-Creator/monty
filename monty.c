@@ -39,7 +39,7 @@ int main(int ac, char **av)
 		if (!CTX->tokens)
 			break;
 
-		if (*CTX->tokens)
+		if (*CTX->tokens && *CTX->tokens[0] != '#')
 			exec_instructions(&CTX->stack, CTX->line_n);
 
 		free(CTX->line);
