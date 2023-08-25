@@ -103,7 +103,7 @@ void exec_instructions(stack_t **stack, unsigned int line_number)
 		{"mod", stack_mod}, {"rotl", stack_rotl},
 		{"pop", stack_pop}, {"pint", stack_pint},
 		{"pchar", stack_pchar}, {"mul", stack_mul},
-		{NULL, NULL}};
+		{"add", stack_add}, {NULL, NULL}};
 
 	if (!CTX->tokens)
 		return;

@@ -1,6 +1,31 @@
 #include "monty.h"
 
 /**
+ * stack_add - swap top of the stack with botton of stack
+ * and remove top element
+ * @stack: pointer to head of stack (top node)
+ * @line_number: the line number that contains the "rotl" instruction
+ * Return: void
+ */
+void stack_add(UNUSED stack_t **stack, UNUSED unsigned int line_number)
+{
+	int sum;
+	stack_t *curr = NULL;
+
+	if ((*stack) == NULL || stack == NULL || (*stack)->prev == NULL)
+	{
+		fprintf(stderr, "L%u: can't add, stack too short\n", line_number);
+		free(CTX);
+		exit(EXIT_FAILURE);
+	}
+	sum = (*stack)->n + ((*stack)->prev)->n;
+	curr = (*stack);
+	(*stack) = (*stack)->prev;
+	(*stack)->n = sum;
+	free(curr);
+}
+
+/**
  * stack_rotl - swap top of the stack with botton of stack
  * and remove top element
  * @stack_top: pointer to head of stack (top node)
