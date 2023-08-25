@@ -47,3 +47,26 @@ void stack_pchar(stack_t **stack_top, unsigned int line_number)
 	}
 	fprintf(stdout, "%c\n", (*stack_top)->n);
 }
+
+/**
+ * stack_mul - multiply the the top element with it's previous
+ * @stack_top: pointer to head of stack (top node)
+ * @line_number: the line number that contains the "mul" instruction
+ * Return: void
+ *
+ * Description: will mul the top two elements and replace it with
+ * one node contains the result
+ */
+void stack_mul(stack_t **stack_top, UNUSED unsigned int line_number)
+{
+	if (!stack_top || !*stack_top || !(*stack_top)->prev)
+	{
+		fprintf(stderr, "L%u: can't mul, stack too short\n", line_number);
+		free_ctx();
+		exit(EXIT_FAILURE);
+	}
+
+	(*stack_top)->prev->n *= (*stack_top)->n;
+	*stack_top = (*stack_top)->prev;
+	free((*stack_top)->next);
+}

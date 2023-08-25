@@ -102,7 +102,7 @@ void exec_instructions(stack_t **stack, unsigned int line_number)
 		{"sub", stack_sub}, {"div", stack_div},
 		{"mod", stack_mod}, {"rotl", stack_rotl},
 		{"pop", stack_pop}, {"pint", stack_pint},
-		{"pchar", stack_pchar},
+		{"pchar", stack_pchar}, {"mul", stack_mul},
 		{NULL, NULL}};
 
 	if (!CTX->tokens)
