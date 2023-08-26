@@ -94,7 +94,7 @@ $ ./monty bytecodes/00.m
 3  
 2  
 1  
-julien@ubuntu:~/monty$
+$
 ```
 ---
 
@@ -111,7 +111,7 @@ $ ./monty bytecodes/06.m
 1
 2
 3
-julien@ubuntu:~/monty$
+$
 ```
 ---
 
